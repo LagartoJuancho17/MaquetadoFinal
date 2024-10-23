@@ -1,0 +1,66 @@
+header{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery{
+    margin: 0;
+    background-color: #F2ECE5;
+    padding:0px 50px;
+    width: 80%;
+    margin: auto;
+    display: grid;
+}
+
+.gallery h1, h3{
+    text-align: center;
+}
+
+.gallery h1{
+    margin: 0px;
+    margin-top: 11vh;
+    font-family: "niveau-grotesk", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 30px;
+}
+
+.gallery h3{
+    margin: 0;
+    margin-bottom: 11vh;
+    font-family: "myriad-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: rgb(111, 111, 111);
+}
+
+.contenedor-gallery{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    background-color: #F2ECE5;
+    margin-bottom: 18vh;
+}
+
+.articulo img{
+    width: 100%;
+    height: auto; 
+}
+
+.articulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.articulo h1{
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.articulo p{
+    margin: 0px;
+}
