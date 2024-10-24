@@ -1,4 +1,3 @@
-
 /*---------------------CLASES ÚTILES---------------------*/
 .flex-center {
     justify-content: center;
@@ -110,7 +109,6 @@
 html {
     scroll-behavior: smooth;
     font-size: 14px;
-
 }
 
 body {
@@ -120,49 +118,16 @@ body {
     font-size: 16px;
 }
 
-.background-section {
-    position: relative;
-    width: 99.1vw;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.static-background {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #2B241F; /* Cambia este código de color al que prefieras */
-    z-index: 1;
-}
-
-
-.moving-background {
-    text-align: center;
-    
-    background-repeat:repeat;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/assets/images/01.png');
-    z-index: 2;
-    pointer-events: none;
-    transition: transform 0.2s ease-out;
-}
-
-
 header {
+    background-color: #2B241F;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea */
     height: 8vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+
 
 .logo {
     width: 120px;
@@ -183,16 +148,39 @@ header {
 
 .li-navbar a {
     text-decoration: none;
+    position: relative; /* Agregamos relative para que el ::before funcione correctamente */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.li-navbar a:hover{
+    opacity: 0.6;
+}
+/* NAVBAR ANIMACIÓN */
+.navbar ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover::before {
+    width: 100%;
 }
 
 .ul-iconos {
     display: flex;
     margin-right: 3rem;
+    list-style: none;
 }
 
 .li-iconos i {
     font-size: smaller;
     margin: 5px;
+    color: white;
 }
 
 /*PARTE DEL HOME*/
@@ -400,9 +388,22 @@ button:hover{
     height: 50vh;
 }
 
+.banner{
+    overflow-x: hidden;
+}
+
+/* Inicialmente, los banners estarán fuera de la pantalla */
+/* Define un ancho fijo para que no cambie antes o durante la animación */
+#banner30, #banner70 {
+    opacity: 0;
+    position: relative;
+    transition: all 1s ease;
+}
+
 #banner30{
     width: 35%;
     background-image: url(/assets/images/banner30.jpg.webp);
+    transform: translateX(-100%); /* Mueve fuera de la pantalla desde la izquierda */
 }
 
 #banner70{
@@ -410,6 +411,7 @@ button:hover{
     background-image: url(/assets/images/banner70.jpg);
     display: flex;
     justify-content: flex-start;
+    transform: translateX(100%); /* Mueve fuera de la pantalla desde la derecha */
 }
 
 #banner70 div{
@@ -419,6 +421,15 @@ button:hover{
 }
 
 
+.in-view #banner30 {
+    opacity: 1;
+    transform: translateX(0); /* Vuelve a su posición original */
+}
+
+.in-view #banner70 {
+    opacity: 1;
+    transform: translateX(0); /* Vuelve a su posición original */
+}
 
 /*GALLERY GRID*/
 .gallery-grid{

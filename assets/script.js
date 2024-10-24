@@ -1,9 +1,14 @@
-const movingBackground = document.querySelector('.moving-background');
+const bannerSection = document.querySelector('.banner');
 
-document.addEventListener('mousemove', (event) => {
-    const x = (event.clientX / window.innerWidth) * 50;
-    const y = (event.clientY / window.innerHeight) * 50;
-
-    // Mueve el fondo PNG en función del cursor
-    movingBackground.style.transform = `translate(-${x}%, -${y}%)`;
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target); // Dejar de observar después de la primera vez
+        }
+    });
+}, {
+    threshold: 0.5
 });
+
+observer.observe(bannerSection);
