@@ -931,6 +931,7 @@ footer ul {
 .left-number-locator{
     border-right: 1px solid #e0e0e0;
     text-align: center;
+    margin-left: 200px;
 }
 .left-number-locator h1{
     position: absolute;
@@ -959,10 +960,12 @@ footer ul {
     .store-locator-stores{
         grid-template-columns: 1fr;
         padding: 0 5%;
+
     }
     .left-number-locator{
         border-right: none;
         border-bottom: 1px solid #e0e0e0;
+                margin: 0;
     }
     .left-number-locator h1{
         font-size: 48px;
@@ -1032,12 +1035,22 @@ footer ul {
 
 
 /*CARDS DE PAISES*/
+
+#paises-card-background{
+    background-color: #f5f5f5;
+    padding: 60px;
+    width: 100wh;
+    height: 80vh;
+}
+
 .container-store-locator {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
             padding: 10px;
-            max-width: 100vh;
+            max-width: 80%;
+            margin: 0 auto;
+            background-color: #f5f5f5;
         }
 
         .card-store-locator {
@@ -1077,3 +1090,86 @@ footer ul {
             margin: 5px 0;
 
         }
+
+
+        /* Ajuste para pantallas más pequeñas */
+@media (max-width: 1024px) {
+    .container-store-locator {
+        grid-template-columns: repeat(2, 1fr); /* Pasa a 2 columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 600px) {
+    .container-store-locator {
+        grid-template-columns: 1fr; /* Pasa a 1 columna en pantallas pequeñas */
+    }
+}
+
+
+
+
+.left-number-locator h1.color-dorado{
+    position: inherit;
+    text-align: left;
+    font-size: 16px;
+    color: #d4af37;
+}
+.left-number-locator p.color-gris-oscuro{
+    font-size: 20px;
+    text-align: left;
+}
+
+
+.right-text-locator p{
+    font-size:  16px;
+}
+
+.right-text-locator{
+    width: 480px;
+}
+
+
+@media (max-width: 768px) {
+    .store-locator-stores{
+        grid-template-columns: 1fr;
+        padding: 0 5%;
+
+    }
+    .left-number-locator{
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+                margin: 0;
+    }
+    .left-number-locator h1{
+        font-size: 48px;
+    }
+    .left-number-locator p{
+        font: 12px;
+    }
+    .right-text-locator{
+        width: 70%;
+        font-size: 14px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+#marcosss{
+    /* Ajustes generales */
+#marcosss {
+    order: 1; /* Valor predeterminado para que aparezca en la posición inicial */
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+    .display-flex {
+        flex-direction: column; /* Cambia la dirección del flex para apilar elementos */
+    }
+
+    #marcosss {
+        order: 2; /* Mueve el elemento al final en pantallas pequeñas */
+    }
+}
+}
