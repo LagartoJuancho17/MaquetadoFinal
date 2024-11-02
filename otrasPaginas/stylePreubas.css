@@ -1,0 +1,67 @@
+html {
+    scroll-behavior: smooth;
+    font-size: 14px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #F2ECE5;
+    font-size: 16px;
+
+}
+
+.home{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    background-color: #2B241F;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.home-reloj{
+    text-align: right;
+}
+
+.home-reloj img{
+    width: 60%;
+    height: auto;
+}
+
+.home-content{
+    text-align: left;
+    padding-left: 30px;
+}
+
+.home-content h1{
+    margin: 5px;
+    word-spacing: 3px;
+}
+
+.home-content h1::before{
+    content: "-";
+    font-size: 30px;
+    margin-right:6px;
+}
+
+.home-content h3{
+    line-height: 60px;
+    margin: 5px;
+
+}
+
+button{
+    height: 26px;
+    width: 120px;
+    border-radius: 40px;
+    background-color: #2B241F;
+    border-color: #cca47e;
+    font-size: 10px;
+}
+
+button:hover{
+    transition: 0.4s;
+    background-color: #cca47e;
+    color: #ffffff;
+}

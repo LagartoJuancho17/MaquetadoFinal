@@ -116,10 +116,10 @@ body {
     padding: 0px;
     background-color: #F2ECE5;
     font-size: 16px;
+
 }
 
 header {
-    background-color: #2B241F;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea */
     height: 8vh;
     display: flex;
@@ -127,7 +127,22 @@ header {
     align-items: center;
 }
 
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Hace que ocupe todo el ancho */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    transition: top 0.3s ease; /* Suaviza la transición al desaparecer */
+}
 
+.navbar.hidden {
+    top: -70px; /* Mueve el navbar hacia arriba para ocultarlo */
+}
+
+.navbar.black {
+    background-color: black; /* Cambia el color del navbar a negro */
+}
 
 .logo {
     width: 120px;
@@ -186,8 +201,12 @@ header {
 /*PARTE DEL HOME*/
 
 .home{
-    height: 92vh;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    height: 100vh;
     background-color: #2B241F;
+    padding: 0 20px;
 }
 
 .home-reloj{
@@ -196,8 +215,10 @@ header {
 }
 
 .home-reloj img{
-    width: 60%;
+    width: 70%;
     height: auto;
+    max-width: 1000px; /* Tamaño máximo para pantallas grandes */
+    min-width: 500px; /* Tamaño mínimo para pantallas pequeñas */
 }
 
 .home-content{
@@ -208,6 +229,7 @@ header {
 .home-content h1{
     margin: 5px;
     word-spacing: 3px;
+    
 }
 
 .home-content h1::before{
@@ -219,6 +241,7 @@ header {
 .home-content h3{
     line-height: 60px;
     margin: 5px;
+
 }
 
 button{
@@ -235,6 +258,7 @@ button:hover{
     background-color: #cca47e;
     color: #ffffff;
 }
+
 
 /*TERCERA PARTE*/
 
@@ -324,7 +348,6 @@ button:hover{
 .gallery h3{
     margin: 0;
     margin-bottom: 11vh;
-    font-family: "myriad-pro", sans-serif;
     font-weight: 400;
 }
 
@@ -372,8 +395,9 @@ button:hover{
     height: auto; 
 }
 
-.articulo h1{
+.articulo h3{
     margin-top: 5px;
+    margin-bottom: 0px;
 }
 
 .articulo p{
@@ -432,6 +456,8 @@ button:hover{
 }
 
 /*GALLERY GRID*/
+
+
 .gallery-grid{
         display: grid;
         grid-template-columns: repeat(4, 300px);
@@ -444,7 +470,22 @@ button:hover{
     background-size:cover;
     background-position:center ;
     background-repeat: no-repeat;
+
 }
+
+.gallery-4-cards{
+    position: relative;
+}
+.gallery-4-cards h3{
+    position: absolute;
+    margin: 30px;
+}
+.gallery-4-cards p{
+    position: absolute;
+    margin: 30px;
+    top: 20px;
+}
+
 
 .gallery-grid #div1{
     background-image: url(/assets/images/reloj_producto.jpeg);
@@ -465,7 +506,6 @@ button:hover{
     grid-column: span 2;
     transform: rotate(180deg);
 }
-
 
 
 #off70{
@@ -568,3 +608,195 @@ button:hover{
 
 
 /*FOOOOOTEEERR*/
+
+
+
+
+
+
+.home-gallery{
+    background: url(/assets/images/imagenesShop/watch-shop-header-bg.jpg) no-repeat center center;
+    background-size: cover; /* Escala la imagen para que cubra toda el área */
+    background-position: top;
+    height: 50vh; /* Ajusta la altura al 100% del viewport */
+}
+
+.homeComun{
+    flex-direction: column;
+}
+
+.homeComun h1{
+    margin: 0px;
+}
+
+
+.breadcrumb {
+            padding: 10px 20px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .breadcrumb a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+
+
+
+
+/* Estilos principales para el contenedor de filtros y galería */
+
+
+/* Estilo de la galería de productos */
+
+
+
+.shop-gallery {
+    width: 80%;
+    margin-top: 7vh;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.producto img {
+    max-width: 100%;
+}
+
+
+
+
+
+/*PRODUCTO UNICO*/
+
+.home-shipping {
+    background: url(/assets/images/Shipping/watch-shipping-and-delivery-01.jpg) no-repeat center center; /* Centrado de la imagen */
+    background-size: cover;
+    height: 50vh; /* Ajusta la altura al 50% del viewport */
+}
+
+.container-shipping {
+    display: flex;
+    flex-direction: row; /* Colocar los elementos en fila */
+    align-items: center;
+    justify-content: center;
+    height: auto; /* Cambia a auto para que se adapte al contenido */
+    padding: 2rem; /* Espaciado en todo el contenedor */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+}
+
+.image-section-shipping {
+    flex: 1 1 300px; /* Ajusta el tamaño base de los elementos */
+    display: flex;
+    justify-content: center;
+    margin: 1rem; /* Espacio entre elementos */
+}
+
+.image-section-shipping img {
+    max-width: 100%;
+    height: auto; /* Mantiene la relación de aspecto */
+}
+
+.text-section-shipping {
+    flex: 1 1 300px; /* Ajusta el tamaño base de los elementos */
+    padding: 2rem; /* Usa un padding más adecuado */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.text-section-shipping h2 {
+    font-size: 1.5rem; /* Ajuste de tamaño */
+    margin-bottom: 1rem; /* Espacio debajo del título */
+}
+
+.text-section-shipping ul {
+    list-style: none; /* Elimina los estilos de lista */
+    padding: 0;
+}
+
+.text-section-shipping ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem; /* Espacio entre elementos de la lista */
+    position: relative;
+}
+
+.text-section-shipping ul li i {
+    color: #d4af37;
+    margin-right: 0.5rem; /* Espacio a la derecha del icono */
+}
+
+.text-section-shipping ul li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd; /* Línea separadora */
+}
+
+
+.features-shipping {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px 10% 50px 10%;
+            background-color: gray;
+        }
+        .feature-item-shipping {
+            width: 30%;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .feature-item-shipping i {
+            font-size: 40px;
+            color: #bfa16a;
+            margin-bottom: 20px;
+        }
+        .feature-item-shipping h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .feature-item-shipping p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+       
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .container-shipping {
+        flex-direction: column; /* Apilar en pantallas más pequeñas */
+    }
+
+    .feature-item-shipping {
+                width: 45%;
+                padding: 20px
+            }
+}
+
+@media (max-width: 480px) {
+    .feature-item-shipping {
+        width: 100%;
+        padding: 20px /* Ancho completo en pantallas pequeñas */
+    }
+
+    .text-section-shipping h2 {
+        font-size: 1.25rem; /* Tamaño de texto más pequeño */
+    }
+
+    .text-section-shipping ul li {
+        font-size: 0.875rem; /* Ajusta el tamaño del texto de la lista */
+    }
+}
+
