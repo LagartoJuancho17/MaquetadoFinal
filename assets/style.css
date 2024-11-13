@@ -132,7 +132,7 @@ header {
 }
 
 .navbar {
-    position: fixed;
+    position: fixed; /*El elemento se coloca en relación a la ventana del navegador, no al elemento contenedor, y no se moverá al hacer scroll.*/
     top: 0;
     left: 0;
     z-index: 1000;
@@ -956,36 +956,7 @@ footer ul {
     width: 480px;
 }
 
-@media (max-width: 768px) {
-    .store-locator-stores{
-        grid-template-columns: 1fr;
-        padding: 0 5%;
-
-    }
-    .left-number-locator{
-        border-right: none;
-        border-bottom: 1px solid #e0e0e0;
-                margin: 0;
-    }
-    .left-number-locator h1{
-        font-size: 48px;
-    }
-    .left-number-locator p{
-        font: 12px;
-    }
-    .right-text-locator{
-        width: 70%;
-        font-size: 14px;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
 .store-locator-mapa {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 70vh; /* Ocupa la altura total de la pantalla */
     background-color: #f5f5f5;
     padding-top: 100px;
@@ -997,7 +968,6 @@ footer ul {
     height: 100%;
     background: url(/assets/images/Store-locator/watch-56.jpg) no-repeat center center;
     background-size: contain; /* Ajusta la imagen para que se vea completa */
-    display: flex;
     justify-content: center;
     align-items: flex-end; /* Coloca el texto en la parte inferior */
     color: white; /* Asegura que el texto sea visible */
@@ -1006,7 +976,6 @@ footer ul {
 }
 
 .imagen-mapa-store-locator p{
-    text-align: center;
     width: 370px;
 }
 
@@ -1036,20 +1005,13 @@ footer ul {
 
 /*CARDS DE PAISES*/
 
-#paises-card-background{
-    background-color: #f5f5f5;
-    padding: 60px;
-    width: 100wh;
-    height: 80vh;
-}
-
 .container-store-locator {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 15px;
             padding: 10px;
             max-width: 80%;
-            margin: 0 auto;
+            margin: 30px auto 60px auto;
             background-color: #f5f5f5;
         }
 
@@ -1088,11 +1050,10 @@ footer ul {
 
         .card-content-store-locator .contact-info-store-locator p {
             margin: 5px 0;
-
         }
 
 
-        /* Ajuste para pantallas más pequeñas */
+/* Ajuste para pantallas más pequeñas */
 @media (max-width: 1024px) {
     .container-store-locator {
         grid-template-columns: repeat(2, 1fr); /* Pasa a 2 columnas en pantallas medianas */
@@ -1105,9 +1066,6 @@ footer ul {
     }
 }
 
-
-
-
 .left-number-locator h1.color-dorado{
     position: inherit;
     text-align: left;
@@ -1119,7 +1077,6 @@ footer ul {
     text-align: left;
 }
 
-
 .right-text-locator p{
     font-size:  16px;
 }
@@ -1127,7 +1084,6 @@ footer ul {
 .right-text-locator{
     width: 480px;
 }
-
 
 @media (max-width: 768px) {
     .store-locator-stores{
@@ -1156,20 +1112,209 @@ footer ul {
 }
 
 
-#marcosss{
-    /* Ajustes generales */
-#marcosss {
-    order: 1; /* Valor predeterminado para que aparezca en la posición inicial */
+.banner4-fotos{
+    grid-template-columns: repeat(4,1fr);
 }
 
-/* Para pantallas pequeñas */
+.banner4-fotos article{
+    height: 500px;
+    background-color: #cca47e
+}
+
+.banner4-fotos article:nth-child(1){
+    justify-content: center;
+    align-items: center;
+}
+
+.banner4-fotos article:nth-child(1) div{
+    width: 80%;
+    height: 50%;
+}
+
+.banner4-fotos article:nth-child(1) div p{
+    margin-top: 0;
+}
+
+.banner4-fotos article:nth-child(2){
+    background-image: url(/assets/images/Store-locator/fashion-store-locator-09.jpg);
+}
+
+.btn-store{
+    border-radius: 0px;
+    width: 170px;
+    height: 40px;
+    background-color: #232323;
+}
+
+.banner4-fotos article:nth-child(3){
+    background-color: #232323;
+}
+
+.banner4-fotos .display-flex .flex-center{
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    
+}
+
+.banner4-fotos .text-section-shipping{
+    margin: 30px;
+    height: 200px;
+    background-color: #232323;
+}
+
+.banner4-fotos .text-section-shipping h2{
+    margin-bottom: 50px;
+}
+
+
+.banner4-fotos article:nth-child(4){
+    background-image: url(/assets/images/Store-locator/fashion-store-locator-09.jpg);
+}
+
+
+.store-locator-store-cards{
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.store-locator-store-card{
+    background-color: white;
+    margin: 10px;
+    width: 100%;
+    max-width: 423px;
+    height: 350px;
+    overflow: hidden;
+    flex-direction: row;
+}
+
+.store-locator-store-card img{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.store-locator-store-card-content{
+    padding: 20px;
+    width: 50%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sale-badge{
+    background-color: #cca47e;
+    color: white;
+    align-self: flex-start;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.store-locator-store-card-content h3{
+    margin: 0 0 10px 0;
+}
+
+.store-locator-store-card-content p{
+    margin: 0 0 20px 0;
+}
+
+.store-locator-store-card-content a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.location-button{
+    display: inline-block;
+    width: 80px;
+    border: 1px solid #000;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+
 @media (max-width: 768px) {
-    .display-flex {
-        flex-direction: column; /* Cambia la dirección del flex para apilar elementos */
-    }
-
-    #marcosss {
-        order: 2; /* Mueve el elemento al final en pantallas pequeñas */
+    .banner4-fotos {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
     }
 }
+
+@media (max-width: 480px) {
+    .banner4-fotos {
+        grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+    }
+}
+
+
+
+/* Ajustes para los store-locator-store-card */
+@media (max-width: 768px) {
+    .store-locator-store-card {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .store-locator-store-card img {
+        width: 100%;
+        height: 250px; /* Altura fija para la imagen */
+        object-fit: cover;
+    }
+
+    .store-locator-store-card-content {
+        width: 100%;
+        padding: 15px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .sale-badge {
+        align-self: center;
+    }
+}
+
+/* Ajustes para features-shipping en pantallas pequeñas */
+@media (max-width: 768px) {
+    .features-shipping {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-item-shipping {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .store-locator-store-card-content {
+        padding: 10px;
+    }
+
+    .features-shipping {
+        padding: 20px 10px;
+    }
+}
+
+
+.icon-grid{
+    justify-content: space-around;
+    width: 80%;
+}
+
+.icon-item img{
+    width: 100px;
+    height: 100px;
+    transition: opacity 0.3s ease;
+}
+
+.icon-item img:hover{
+    opacity: 0.5;
+}
+
+.five-icons-foot{
+    height: 50vh;
+    background-color: white;
 }
