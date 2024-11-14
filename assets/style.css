@@ -721,7 +721,7 @@ footer ul {
 
 
 .breadcrumb {
-            padding: 10px 20px;
+            padding: 10px 20%;
             background-color: #f9f9f9;
             border-top: 1px solid #e0e0e0;
             border-bottom: 1px solid #e0e0e0;
@@ -735,6 +735,212 @@ footer ul {
             text-decoration: underline;
         }
 
+
+
+.container-shop{
+    padding: 100px 50px;
+    background-color: white;
+}
+
+.sidebar{
+    width: 15%;
+    padding: 4%;
+}
+
+
+.sidebar {
+            width: 20%;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing: border-box;
+        }
+
+
+.content-shop-gallery{
+    flex: 1;
+    padding: 20px;
+}
+
+.filter-section{
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.filter-section h3{
+    margin-bottom: 10px;
+}
+
+.filter-section ul{
+    list-style: none;
+    padding: 0;
+}
+
+.filter-section ul li{
+    margin-bottom: 5px;
+}
+
+.filter-section ul li label {
+            align-items: center;
+}
+
+.custom-checkbox input[type="radio"]{
+    display: none;
+}
+
+.custom-checkbox{
+    position: relative;
+    cursor: pointer;
+}
+
+.custom-checkbox::before{
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: red;
+    margin-right: 8px;
+}
+
+ul li:nth-of-type(2) .custom-checkbox::before {
+    background-color: black; /* Cambia el color del círculo o cualquier otro estilo */
+}
+
+ul li:nth-of-type(3) .custom-checkbox::before {
+    background-color: green; /* Cambia el color del círculo o cualquier otro estilo */
+}
+
+ul li:nth-of-type(4) .custom-checkbox::before {
+    background-color: blue; /* Cambia el color del círculo o cualquier otro estilo */
+}
+
+ul li:nth-of-type(5) .custom-checkbox::before {
+    background-color: silver; /* Cambia el color del círculo o cualquier otro estilo */
+}
+
+ul li:nth-of-type(6) .custom-checkbox::before {
+    background-color: goldenrod; /* Cambia el color del círculo o cualquier otro estilo */
+}
+
+ul li:nth-of-type(7) .custom-checkbox::before {
+    background-color: silver; /* Cambia el color del círculo o cualquier otro estilo */
+}
+
+.filter-section ul li label input {
+            margin-right: 10px;
+}
+
+.filter-section .price-filter {
+            align-items: center;
+            margin-bottom: 20px;
+}
+.filter-section .price-filter input {
+            margin-left: 10px;
+            width: 60px;
+        }
+        .filter-section i {
+            color: #f39c12;
+        }
+
+.product-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .product-item {
+            padding: 5px;
+            text-align: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .sorting {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .sorting select, .sorting button {
+            padding: 5px;
+        }
+        .sorting .left {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .column-buttons {
+            display: flex;
+            gap: 5px;
+        }
+        .column-buttons button {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .filter-toggle {
+            display: none;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+        }
+
+@media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .filter-toggle {
+                display: block;
+            }
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -300px;
+                width: 300px;
+                height: 100%;
+                overflow-y: auto;
+                transition: left 0.3s ease;
+                z-index: 1000;
+            }
+            .sidebar.open {
+                left: 0;
+            }
+            .content-shop-gallery {
+                margin-left: 0;
+                transition: margin-left 0.3s ease;
+            }
+            .content.shifted {
+                margin-left: 300px;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                width: 100%;
+                left: -100%;
+            }
+            .sidebar.open {
+                left: 0;
+            }
+            .content.shifted {
+                margin-left: 0;
+            }
+        }
 /* Estilos principales para el contenedor de filtros y galería */
 
 
@@ -754,6 +960,7 @@ footer ul {
 .producto img {
     max-width: 100%;
 }
+
 
 
 /*SHIPPING*/
@@ -1225,11 +1432,18 @@ footer ul {
 }
 
 .location-button{
+    text-decoration: none;
+    color: black;
     display: inline-block;
     width: 80px;
     border: 1px solid #000;
     text-align: center;
     text-decoration: none;
+}
+
+.location-button:hover{
+    background-color: black;
+    color: white;
 }
 
 
@@ -1318,3 +1532,10 @@ footer ul {
     height: 50vh;
     background-color: white;
 }
+
+
+
+/*SHOP GALLERY*/
+
+
+
