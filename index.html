@@ -19,27 +19,30 @@
 </head>
 <body class="mar-pad0">
     <header class="display-flex spc-btw navbar w100 items-center">
-        <img class="logo" src="/assets/images/logo.png" alt="logo">
-        <nav class="display-flex spc-btw items-center ">
-            <ul class="ul-navbar display-flex mar-pad0">
-                <li class="li-navbar"><a href="" class="color-white niveau em1">Home</a></li>
-                <li class="li-navbar"><a href="" class="color-white niveau em1">Shop</a></li>
-                <li class="li-navbar"><a href="" class="color-white niveau em1">Product</a></li>
-                <li class="li-navbar"><a href="" class="color-white niveau em1">Size Guide</a></li>
-                <li class="li-navbar"><a href="/otrasPaginas/Shipping-and-delivery.html" class="color-white niveau em1">Shipping</a></li>
-                <li class="li-navbar"><a href="/otrasPaginas/store-locator.html" class="color-white niveau em1">Store Locator</a></li>
-                <li class="li-navbar"><a href="" class="color-white niveau em1">Contact</a></li>
+            <img class="logo" src="/assets/images/logo.png" alt="logo">
+            <nav class="display-flex spc-btw items-center ">
+                <ul class="ul-navbar display-flex mar-pad0">
+                    <li class="li-navbar"><a href="/index.html" class="color-white niveau em1 pos-relative">Home</a></li>
+                    <li class="li-navbar"><a href="/otrasPaginas/gallery.html" class="color-white niveau em1 pos-relative">Shop</a></li>
+                    <li class="li-navbar"><a href="/otrasPaginas/watch-product.html" class="color-white niveau em1">Product</a></li>
+                    <li class="li-navbar"><a href="/otrasPaginas/size-guide.html" class="color-white niveau em1 pos-relative">Size Guide</a></li>
+                    <li class="li-navbar"><a href="/otrasPaginas/Shipping-and-delivery.html" class="color-white niveau em1 pos-relative">Shipping</a></li>
+                    <li class="li-navbar"><a href="/otrasPaginas/store-locator.html" class="color-white niveau em1 pos-relative">Store Locator</a></li>
+                    <li class="li-navbar"><a href="/otrasPaginas/contact-page.html" class="color-white niveau em1 pos-relative">Contact</a></li>
+                </ul>
+            </nav>
+            <ul class="ul-iconos display-flex">
+                <li class="fas li-iconos"><i class="fa-solid fa-magnifying-glass color-white"></i></li>
+                <li class="fas li-iconos"><i class="fa-regular fa-user color-white"></i></li>
+                <li class="fas li-iconos"><i class="fa-regular fa-heart color-white"></i></li>
+                <li class="fas li-iconos"><i class="fa-solid fa-cart-shopping color-white"></i></li>
             </ul>
-        </nav>
-        <ul class="ul-iconos display-flex">
-            <li class="fas li-iconos"><i class="fa-solid fa-magnifying-glass color-white"></i></li>
-            <li class="fas li-iconos"><i class="fa-regular fa-user color-white"></i></li>
-            <li class="fas li-iconos"><i class="fa-regular fa-heart color-white"></i></li>
-            <li class="fas li-iconos"><i class="fa-solid fa-cart-shopping color-white"></i></li>
-        </ul>
-    </header>
-
-    <section class="home display-grid items-center">
+            <div class="menu-toggle">
+                    <i class="fa-solid fa-bars color-white"></i>
+                </div>
+        </header>
+        
+    <section class="home display-flex items-center">
         <article class="home-reloj">
             <img src="/assets/images/Reloj1.png" alt="Reloj1">
         </article>
@@ -62,11 +65,11 @@
     </section>
 
     <!--4 FOTOS BANNER-->
-    <section class="fotosBanner flex-center display-flex spc-btw">
-            <div class="fotosBanner"><img src="assets/images/banner2.jpg " at="" class="w100"><h1 class="niveau w100 color-white em08">OUR COLLECTION</h1><p class="niveau w100 color-gris-oscuro">High quality and <br> good design shape</p></div>
-            <div id="videoBanner" ><img src="assets/images/banner3.jpg" alt="" class="w100"><i class="fa-regular fa-circle-play play-icon color-white em4"></i></div>
-            <div><img src="assets/images/banner1.jpeg " alt="" class="w100"></div>
-            <div class="fotosBanner"><img src="assets/images/banner4.jpg" alt="" class="w100"><h1 class="niveau w100 color-dorado em08">ABOUT ROTARY</h1><p class="niveau w100 color-white">Designing wathces <br> full time work</p></div>
+    <section class="fotosBanner flex-center display-flex spc-btw fl-wrap">
+            <div class="fotosBanner pos-relative"><img src="assets/images/banner2.jpg " at="" class="w100"><h1 class="niveau w100 color-white em08 pos-absolute">OUR COLLECTION</h1><p class="niveau w100 color-gris-oscuro pos-absolute">High quality and <br> good design shape</p></div>
+            <div id="videoBanner" class="pos-relative" ><img src="assets/images/banner3.jpg" alt="" class="w100 pos-relative"><i class="fa-regular fa-circle-play play-icon color-white em4 pos-absolute"></i></div>
+            <div class="pos-relative"><img src="assets/images/banner1.jpeg " alt="" class="w100"></div>
+            <div class="fotosBanner pos-relative"><img src="assets/images/banner4.jpg" alt="" class="w100 pos-relative"><h1 class="niveau w100 color-dorado em08 pos-absolute">ABOUT ROTARY</h1><p class="niveau w100 color-white pos-absolute">Designing wathces <br> full time work</p></div>
         </section>
     </section>
 
@@ -79,8 +82,8 @@
 
 
         <article class="banner display-flex w100">
-                <section id="banner30" class="back-cover"></section>
-                <section id="banner70" class="back-cover flex-center display-flex text-left w100">
+                <section id="banner30" class="back-cover pos-relative"></section>
+                <section id="banner70" class="back-cover flex-center display-flex text-left w100 pos-relative">
                     <div>
                         <h2 class="color-dorado niveau rem1">
                             ABOUT COMPANY
@@ -101,10 +104,10 @@
         <!--GALLERY DE 4-->
         <div class="flex-center display-flex gallery-4-div">
         <article class="gallery-grid display-grid">
-            <section class="gallery-4-cards" id="div1"><h3 class="myriad rem1">Classic Camo Blacktop</h3><p class="myriad rem1 color-gris">$180</p></section>
-            <section class="gallery-4-cards" id="div2"><h3 class="myriad rem1">Classic Camo Blacktop</h3><p class="myriad rem1 color-gris">$180</p></section>
-            <section class="gallery-4-cards" id="div3"><h3 class="myriad rem1">Classic Camo Blacktop</h3><p class="myriad rem1 color-gris">$180</p></section>
-            <section class="gallery-4-cards" id="div4"><h3 class="myriad rem1">Classic Camo Blacktop</h3><p class="myriad rem1 color-gris">$180</p></section>
+            <section class="gallery-4-cards pos-relative" id="div1"><h3 class="myriad rem1 pos-absolute">Classic Camo Blacktop</h3><p class="myriad rem1 color-gris pos-absolute">$180</p></section>
+            <section class="gallery-4-cards pos-relative" id="div2"><h3 class="myriad rem1 pos-absolute">Classic Camo Blacktop</h3><p class="myriad rem1 color-gris pos-absolute">$180</p></section>
+            <section class="gallery-4-cards pos-relative" id="div3"><h3 class="myriad rem1 pos-absolute">Classic Camo Blacktop</h3><p class="myriad rem1 color-gris pos-absolute">$180</p></section>
+            <section class="gallery-4-cards pos-relative" id="div4"><h3 class="myriad rem1 pos-absolute">Classic Camo Blacktop</h3><p class="myriad rem1 color-gris pos-absolute">$180</p></section>
         </article>
         </div>
 
@@ -189,7 +192,7 @@
         </div>
   </section>
 
-  <footer class="display-flex ">
+  <footer class="display-flex pos-relative">
     <div class="footer-container display-grid">
         <article class="footer-articles">
             <h5 class="niveau rem1 color-white">About Company overview</h5>

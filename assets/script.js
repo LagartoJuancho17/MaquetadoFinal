@@ -118,52 +118,56 @@ window.addEventListener("scroll", () => {
 // Array de productos con valores de color para cada uno
 // Array de productos con valores de color para cada uno
 const productosGallery = [
-    { nombre: "Chrono Rose Gold", imagen: "/assets/images/reloj_producto.jpeg", precio: "$150", color: "rosegold" },
-
+    { nombre: "Chrono Camuflado Black", imagen: "/assets/images/GalleryImagenes/RelojGallery2.0.webp",imagenHover: "/assets/images/GalleryImagenes/RelojGallery2.jpg", precio: "$150", color: "black" },
+    { nombre: "Chrono Black", imagen: "/assets/images/GalleryImagenes/RelojGallery1.0.webp",imagenHover: "/assets/images/GalleryImagenes/RelojGallery1.webp", precio: "$180", color: "black" },
+    { nombre: "Chrono Rose Gold", imagen: "/assets/images/GalleryImagenes/RelojGallery3.0.jpg",imagenHover: "/assets/images/GalleryImagenes/RelojGallery3.jpg", precio: "$180", color: "rosegold" },
+    { nombre: "Gunmetal Black Tan", imagen: "/assets/images/GalleryImagenes/RelojGallery4.0.webp",imagenHover: "/assets/images/GalleryImagenes/RelojGallery4.webp", precio: "$180", color: "golden" },
+    { nombre: "Leather Gray Belt", imagen: "/assets/images/GalleryImagenes/RelojGallery5.0.jpg",imagenHover: "/assets/images/GalleryImagenes/RelojGallery5.jpg", precio: "$180", color: "silver" },
+    { nombre: "Bristol Silver Link", imagen: "/assets/images/GalleryImagenes/RelojGallery6.0.webp",imagenHover: "/assets/images/GalleryImagenes/RelojGallery6.webp", precio: "$180", color: "silver" },
+    { nombre: "Bourbon 360 Gold", imagen: "/assets/images/GalleryImagenes/RelojGallery7.0.jpg",imagenHover: "/assets/images/GalleryImagenes/RelojGallery7.jpg", precio: "$180", color: "green" },
+    { nombre: "Bristol Rose Gold", imagen: "/assets/images/GalleryImagenes/RelojGallery8.0.jpg",imagenHover: "/assets/images/GalleryImagenes/RelojGallery8.jpg", precio: "$180", color: "rosegold" },
+    { nombre: "Bristol Gold Link", imagen: "/assets/images/GalleryImagenes/RelojGallery9.0.jpg",imagenHover: "/assets/images/GalleryImagenes/RelojGallery9.jpg", precio: "$180", color: "green" },
+    { nombre: "Blue Sky", imagen: "/assets/images/GalleryImagenes/RelojGallery10.0.jpg",imagenHover: "/assets/images/GalleryImagenes/RelojGallery10.jpg", precio: "$180", color: "blue" },
+    { nombre: "Bourbon Silver", imagen: "/assets/images/GalleryImagenes/RelojGallery11.0.webp",imagenHover: "/assets/images/GalleryImagenes/RelojGallery11.webp", precio: "$180", color: "brown" },
+    { nombre: "Chrono Rouse Gold", imagen: "/assets/images/GalleryImagenes/RelojGallery1.0.webp",imagenHover: "/assets/images/GalleryImagenes/RelojGallery1.webp", precio: "$180", color: "brown" },
     
-    { nombre: "Chrono Black", imagen: "/assets/images/reloj_producto.jpeg", precio: "$180", color: "black" },
-    { nombre: "Chrono Silver", imagen: "/assets/images/reloj_producto.jpeg", precio: "$200", color: "silver" },
-    { nombre: "Chrono Black Matte", imagen: "/assets/images/reloj_producto.jpeg", precio: "$220", color: "black" },
-    { nombre: "Classic Gold", imagen: "/assets/images/reloj_producto.jpeg", precio: "$170", color: "gold" },
-    { nombre: "Classic Black", imagen: "/assets/images/reloj_producto.jpeg", precio: "$160", color: "black" },
-    { nombre: "Sport Black", imagen: "/assets/images/reloj_producto.jpeg", precio: "$140", color: "black" },
-    { nombre: "Sport Blue", imagen: "/assets/images/reloj_producto.jpeg", precio: "$130", color: "blue" },
-    { nombre: "Smartwatch Silver", imagen: "/assets/images/reloj_producto.jpeg", precio: "$250", color: "silver" },
-    { nombre: "Smartwatch Black", imagen: "/assets/images/reloj_producto.jpeg", precio: "$240", color: "black" },
-    { nombre: "Minimalist White", imagen: "/assets/images/reloj_producto.jpeg", precio: "$120", color: "white" },
-    { nombre: "Luxury Gold", imagen: "/assets/images/reloj_producto.jpeg", precio: "$300", color: "gold" },
 ];
 
 // Seleccionar el contenedor donde se agregarán los productos
 const contenedorGalleryShop = document.getElementById('productGrid');
 
-// Función para filtrar y mostrar productos según el color seleccionado
 function mostrarProductos(colorSeleccionado = null) {
-    // Limpiar el contenedor antes de añadir los productos filtrados
     contenedorGalleryShop.innerHTML = '';
 
     productosGallery.forEach(producto => {
-        // Mostrar el producto solo si su color coincide con el seleccionado
         if (colorSeleccionado === null || producto.color == colorSeleccionado) {
             const articulo = document.createElement('div');
             articulo.classList.add('product-item');
 
-            // Estructura de HTML para cada producto
             articulo.innerHTML = `
-                <img src="${producto.imagen}" alt="${producto.nombre}">                        
+                <img src="${producto.imagen}" alt="${producto.nombre}" class="product-image">                        
                 <h4 class="myriad em08">${producto.nombre}</h4>
                 <div class="product-price myriad em08 color-gris">
                     ${producto.precio}
                 </div>
             `;
 
-            // Añadir el artículo al contenedor
+            const imgElement = articulo.querySelector('.product-image');
+
+            // Eventos para cambiar la imagen al pasar el mouse
+            imgElement.addEventListener('mouseenter', () => {
+                imgElement.src = producto.imagenHover;
+            });
+
+            imgElement.addEventListener('mouseleave', () => {
+                imgElement.src = producto.imagen;
+            });
+
             contenedorGalleryShop.appendChild(articulo);
         }
     });
 }
 
-// Inicializar con todos los productos
 mostrarProductos();
 
 // Función para manejar los radio buttons de los colores
@@ -187,3 +191,19 @@ function toggleSidebar() {
             sidebar.classList.toggle('open');
             content.classList.toggle('shifted');
         }
+
+
+document.querySelectorAll('.tab-link').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('.tab-link').forEach(item => item.classList.remove('active'));
+                document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById(this.getAttribute('data-tab')).classList.add('active');
+                
+                if (this.getAttribute('data-tab') === 'additional-info') {
+                    document.querySelector('.image-content').style.display = 'none';
+                } else {
+                    document.querySelector('.image-content').style.display = 'flex';
+                }
+            });
+        });
